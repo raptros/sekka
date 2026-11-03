@@ -160,9 +160,8 @@ mod tests {
     use super::*;
 
     fn temp() -> PathBuf {
-        let d = std::env::temp_dir().join(format!("utsushi-store-{}-{}", std::process::id(), now()));
-        let _ = std::fs::remove_dir_all(&d);
-        d
+        // Parallel tests must not remove each other's second-based folder.
+        tempfile::tempdir().unwrap().keep()
     }
 
     #[test]

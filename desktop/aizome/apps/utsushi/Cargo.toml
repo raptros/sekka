@@ -16,6 +16,8 @@ name = "aizome-utsushi"
 path = "src/main.rs"
 
 [dependencies]
+aizome-apps.workspace = true
+aizome-mime.workspace = true
 aizome-kit.workspace = true
 aizome-media = { path = "../../crates/aizome-media" }
 serde.workspace = true
@@ -29,3 +31,6 @@ zbus = { version = "5.19", default-features = false, features = ["async-io", "bl
 # through the engine's clipboard, as Shashin does) or a file.
 image = { version = "0.25", default-features = false, features = ["png"] }
 sidestep-engine.workspace = true
+
+[dev-dependencies]
+tempfile = "3"
