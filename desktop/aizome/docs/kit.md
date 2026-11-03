@@ -150,7 +150,8 @@ there is; in a row or column, an equal share of what the others leave),
 Text with no width to fit to, such as a menu label sent to the shell, is cut
 with `aizome_kit::text::clip(s, n)`: at most `n` characters as people count
 them (a flag, an emoji with its skin tone or a letter with its accents is
-one), the last an ellipsis if any were left out.
+one), the last an ellipsis if any were left out. The limit `n` is a
+`std::num::NonZeroUsize`; its positive budget includes the ellipsis.
 
 ### Controls
 
